@@ -1,0 +1,20 @@
+[
+  {
+    "file": "racialequality:config/customplayermodels/dwarf-char.json",
+    "op": "addmerge",
+    "path": "/dwarf/ExtraTraits",
+    "value": [ "rf-dwarf-positive", "rf-dwarf-negative", "rf-dwarf-crafting" ]
+  },
+  {
+    "file": "racialequality:config/customplayermodels/dwarf-char.json",
+    "op": "replace",
+    "path": "/dwarf/AvailableClasses",
+    "value": [ "rf-mountain-dwarf", "rf-hill-dwarf" ]
+  },
+  {
+    "file": "racialequality:config/customplayermodels/dwarf-char.json",
+    "op": "replace",
+    "path": "/dwarf/SizeRange",
+    "value": [ 0.92, 1.02 ]
+  }
+]

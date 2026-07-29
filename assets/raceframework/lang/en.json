@@ -1,0 +1,27 @@
+{
+  "game:characterclass-rf-mountain-dwarf": "Mountain Dwarf",
+  "game:characterclass-rf-hill-dwarf": "Hill Dwarf",
+  "game:characterdesc-rf-mountain-dwarf": "Placeholder description.",
+  "game:characterdesc-rf-hill-dwarf": "Placeholder description.",
+
+  "game:traitname-rf-dwarf-positive": "Stoneborn",
+  "game:trait-rf-dwarf-positive": "<font color=\"#84ff84\">• Stoneborn</font>",
+  "game:traitname-rf-dwarf-negative": "Deepbound ",
+  "game:trait-rf-dwarf-negative": "<font color=\"#ff8484\">• Deepbound</font>",
+  "game:traitname-rf-dwarf-crafting": "Dwarven Craft",
+  "game:trait-rf-dwarf-crafting": "<font color=\"#84ff84\">• Dwarven Craft</font>",
+  "game:traitname-rf-mountain-dwarf-marker": "Deep Delver",
+  "game:trait-rf-mountain-dwarf-marker": "<font color=\"#84ff84\">• Deep Delver</font>",
+  "game:traitname-rf-hill-dwarf-marker": "Hill Forager",
+  "game:trait-rf-hill-dwarf-marker": "<font color=\"#84ff84\">• Hill Forager</font>",
+
+  "game:charattribute-crushingDamageFactor": "{0:P0} crushing damage taken",
+  "game:charattribute-bluntDamageFactor": "{0:P0} blunt damage taken",
+  "game:charattribute-swimSpeed": "{0:P0} swim speed",
+  "game:charattribute-buoyancyFactor": "{0:P0} buoyancy",
+  "game:charattribute-sprintSpeed": "{0:P0} sprint speed",
+  "game:charattribute-armorWalkSpeedAffectedness": "{0:P0} armor walk speed penalty",
+  "game:charattribute-warmthBonus": "{0} °C warmth",
+  "game:charattribute-miningSpeedMul": "{0:P0} mining speed",
+  "game:charattribute-forageDropRate": "{0:P0} forage yield"
+}

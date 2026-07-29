@@ -1,0 +1,40 @@
+[
+  {
+    "code": "rf-dwarf-positive",
+    "type": "positive",
+    "attributes": {
+      "crushingDamageFactor": -0.5,       // PROVISIONAL
+      "bluntDamageFactor": -0.2,          // PROVISIONAL
+      "armorWalkSpeedAffectedness": -0.4, // PROVISIONAL
+      "warmthBonus": 3                    // PROVISIONAL
+    }
+  },
+  {
+    "code": "rf-dwarf-negative",
+    "type": "negative",
+    "attributes": {
+      "swimSpeed": -0.5,                  // PROVISIONAL
+      "buoyancyFactor": -0.3,             // PROVISIONAL
+      "sprintSpeed": -0.2                 // PROVISIONAL
+    }
+  },
+  {
+    "code": "rf-dwarf-crafting",
+    "type": "positive",
+    "attributes": {}
+  },
+  {
+    "code": "rf-mountain-dwarf-marker",   // TEST STUB, deliberately obvious
+    "type": "positive",
+    "attributes": {
+      "miningSpeedMul": 0.5
+    }
+  },
+  {
+    "code": "rf-hill-dwarf-marker",       // TEST STUB, deliberately obvious
+    "type": "positive",
+    "attributes": {
+      "forageDropRate": 0.5
+    }
+  }
+]

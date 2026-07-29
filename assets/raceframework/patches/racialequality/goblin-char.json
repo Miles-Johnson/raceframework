@@ -1,0 +1,8 @@
+[
+  {
+    "file": "racialequality:config/customplayermodels/goblin-char.json",
+    "op": "replace",
+    "path": "/goblin/AvailableClasses",
+    "value": [ "commoner", "hunter", "malefactor", "clockmaker", "blackguard", "tailor" ]
+  }
+]

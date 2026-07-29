@@ -1,0 +1,8 @@
+[
+  {
+    "file": "racialequality:config/customplayermodels/human-char.json",
+    "op": "replace",
+    "path": "/human/AvailableClasses",
+    "value": [ "commoner", "hunter", "malefactor", "clockmaker", "blackguard", "tailor" ]
+  }
+]

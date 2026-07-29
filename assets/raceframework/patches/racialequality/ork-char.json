@@ -1,0 +1,8 @@
+[
+  {
+    "file": "racialequality:config/customplayermodels/ork-char.json",
+    "op": "replace",
+    "path": "/ork/AvailableClasses",
+    "value": [ "commoner", "hunter", "malefactor", "clockmaker", "blackguard", "tailor" ]
+  }
+]
