@@ -1,3 +1,10 @@
+// PlayerModelLib resolves attribute descriptions by first checking for a
+// value-suffixed key "charattribute-{attr}-{value}", then falling back to
+// "charattribute-{attr}" as a format string filled with the value.
+// Non-suffixed format strings are the maintainable form and are what this
+// file uses. Value-suffixed literals are a trap: they break silently when
+// a trait value changes.
+// Reference: PlayerModelLib GetAttributeDescription
 {
   "game:characterclass-rf-mountain-dwarf": "Mountain Dwarf",
   "game:characterclass-rf-hill-dwarf": "Hill Dwarf",
@@ -23,5 +30,11 @@
   "game:charattribute-armorWalkSpeedAffectedness": "{0:P0} armor walk speed penalty",
   "game:charattribute-warmthBonus": "{0} °C warmth",
   "game:charattribute-miningSpeedMul": "{0:P0} mining speed",
-  "game:charattribute-forageDropRate": "{0:P0} forage yield"
+  "game:charattribute-forageDropRate": "{0:P0} forage yield",
+
+  "game:charattribute-animalSeekingRange": "Animals detect you from {0:P0} further",
+  "game:charattribute-bowDrawingStrength": "{0:P0} bow drawing strength",
+  "game:charattribute-healingeffectivness": "{0:P0} healing effectiveness",
+  "game:charattribute-slowtox:tolerance": "Alcohol tolerance x{0}",
+  "game:charattribute-slowtox:overintoxicationDamageMult": "Overintoxication damage x{0}"
 }
