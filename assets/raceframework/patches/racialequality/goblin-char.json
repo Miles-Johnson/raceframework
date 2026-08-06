@@ -4,5 +4,65 @@
     "op": "replace",
     "path": "/goblin/AvailableClasses",
     "value": [ "commoner", "hunter", "malefactor", "clockmaker", "blackguard", "tailor" ]
+  },
+  {
+    "file": "racialequality:config/customplayermodels/goblin-char.json",
+    "op": "addmerge",
+    "path": "/goblin/ExtraTraits",
+    "value": [ "rf-goblin-positive", "rf-goblin-negative" ]
+  },
+  {
+    "file": "racialequality:config/customplayermodels/goblin-char.json",
+    "op": "replace",
+    "path": "/goblin/ModelSizeFactor",
+    "value": 0.49
+  },
+  {
+    "file": "racialequality:config/customplayermodels/goblin-char.json",
+    "op": "replace",
+    "path": "/goblin/GuiModelScale",
+    "value": 0.49
+  },
+  {
+    "file": "racialequality:config/customplayermodels/goblin-char.json",
+    "op": "replace",
+    "path": "/goblin/SizeRange",
+    "value": [ 0.95, 1.05 ]
+  },
+  {
+    "file": "racialequality:config/customplayermodels/goblin-char.json",
+    "op": "add",
+    "path": "/goblin/ScaleColliderWithSizeHorizontally",
+    "value": false
+  },
+  {
+    "file": "racialequality:config/customplayermodels/goblin-char.json",
+    "op": "add",
+    "path": "/goblin/ScaleColliderWithSizeVertically",
+    "value": false
+  },
+  {
+    "file": "racialequality:config/customplayermodels/goblin-char.json",
+    "op": "replace",
+    "path": "/goblin/CollisionBox",
+    "value": [ 0.6, 0.9 ]
+  },
+  {
+    "file": "racialequality:config/customplayermodels/goblin-char.json",
+    "op": "replace",
+    "path": "/goblin/EyeHeight",
+    "value": 0.765
+  },
+  {
+    "file": "racialequality:config/customplayermodels/goblin-char.json",
+    "op": "add",
+    "path": "/goblin/MinEyeHeight",
+    "value": 0.765
+  },
+  {
+    "file": "racialequality:config/customplayermodels/goblin-char.json",
+    "op": "add",
+    "path": "/goblin/MaxEyeHeight",
+    "value": 0.765
   }
 ]

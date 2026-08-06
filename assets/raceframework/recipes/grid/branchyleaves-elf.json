@@ -1,0 +1,11 @@
+{
+	ingredientPattern: "LSL/L_L/LSL",
+	requiresTrait: "rf-elf-positive",
+	ingredients: {
+		"L": { type: "block", code: "leaves-placed-*", name: "wood" },
+		"S": { type: "item", code: "stick" }
+	},
+	width: 3,
+	height: 3,
+	output: { type: "block", code: "leavesbranchy-placed-{wood}" }
+}

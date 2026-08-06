@@ -3,19 +3,25 @@
     "code": "rf-dwarf-positive",
     "type": "positive",
     "attributes": {
-      "crushingDamageFactor": -0.5,       // PROVISIONAL
-      "bluntDamageFactor": -0.2,          // PROVISIONAL
-      "armorWalkSpeedAffectedness": -0.4, // PROVISIONAL
-      "warmthBonus": 3                    // PROVISIONAL
+      "crushingDamageFactor": -0.5,
+      "bluntDamageFactor": -0.2,
+      "armorWalkSpeedAffectedness": -0.85,
+      "warmthBonus": 4,
+      "slowtox:overintoxicationDamageMult": 0.5,
+      "slowtox:tolerance": 3.0
     }
   },
   {
     "code": "rf-dwarf-negative",
     "type": "negative",
     "attributes": {
-      "swimSpeed": -0.5,                  // PROVISIONAL
-      "buoyancyFactor": -0.3,             // PROVISIONAL
-      "sprintSpeed": -0.2                 // PROVISIONAL
+      "swimSpeed": -0.5,
+      "buoyancyFactor": -0.3,
+      "sprintSpeed": -0.2,
+      "animalSeekingRange": 0.2,
+      "bowDrawingStrength": -0.3,
+      "healingeffectivness": -0.2,
+      "gravityDamageFactor": 0.10
     }
   },
   {
@@ -24,17 +30,67 @@
     "attributes": {}
   },
   {
-    "code": "rf-mountain-dwarf-marker",   // TEST STUB, deliberately obvious
+    "code": "rf-mountain-dwarf-marker",
+    "type": "positive",
+    "attributes": {}
+  },
+  {
+    "code": "rf-hill-dwarf-marker",
+    "type": "positive",
+    "attributes": {}
+  },
+  {
+    "code": "rf-elf-positive",
     "type": "positive",
     "attributes": {
-      "miningSpeedMul": 0.5
+      "forageDropRate": 0.6,
+      "wildCropDropRate": 0.3,
+      "walkspeed": 0.08,
+      "hungerrate": -0.4,
+      "bowDrawingStrength": 0.25,
+      "rangedWeaponsAcc": 0.35,
+      "animalSeekingRange": -0.6,
+      "animalHarvestingTime": -0.15,
+      "animalLootDropRate": 0.15,
+      "rfFallDamageReduction": 0.6,
+      "rfTreeClimbing": 1,
+      "rfBranchyLeavesPassthrough": 1
     }
   },
   {
-    "code": "rf-hill-dwarf-marker",       // TEST STUB, deliberately obvious
+    "code": "rf-elf-negative",
+    "type": "negative",
+    "attributes": {
+      "miningSpeedMul": -0.35,
+      "oreDropRate": -0.2,
+      "armorWalkSpeedAffectedness": 0.8,
+      "dietsetup:preservedMult": -0.6
+    }
+  },
+  {
+    "code": "rf-orc-positive",
     "type": "positive",
     "attributes": {
-      "forageDropRate": 0.5
+      "animalHarvestingTime": -0.3,
+      "animalLootDropRate": 0.1
     }
+  },
+  {
+    "code": "rf-orc-negative",
+    "type": "negative",
+    "attributes": {}
+  },
+  {
+    "code": "rf-goblin-positive",
+    "type": "positive",
+    "attributes": {
+      "wildCropDropRate": 0.6,
+      "forageDropRate": 1.35
+    }
+  },
+  {
+    "code": "rf-goblin-negative",
+    "type": "negative",
+    "attributes": {}
   }
 ]
