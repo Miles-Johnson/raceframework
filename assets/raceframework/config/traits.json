@@ -8,7 +8,13 @@
       "armorWalkSpeedAffectedness": -0.85,
       "warmthBonus": 4,
       "slowtox:overintoxicationDamageMult": 0.5,
-      "slowtox:tolerance": 3.0
+      "slowtox:tolerance": 3.0,
+      "dv-maxBrightness": 0.20,
+      "dv-adaptationLossTime": 75,
+      "dv-maxDesaturation": 0.55,
+      "dv-exposureLag": 1,
+      "dv-exposureMultiplier": 0.1,
+      "dv-desaturationThreshold": 0.5
     }
   },
   {
@@ -21,7 +27,10 @@
       "animalSeekingRange": 0.2,
       "bowDrawingStrength": -0.3,
       "healingeffectivness": -0.2,
-      "gravityDamageFactor": 0.10
+      "gravityDamageFactor": 0.10,
+      "dv-rampTime": 100,
+      "dv-rampTargetPercent": 50,
+      "dv-adaptationTime": 150
     }
   },
   {
@@ -72,25 +81,68 @@
     "type": "positive",
     "attributes": {
       "animalHarvestingTime": -0.3,
-      "animalLootDropRate": 0.1
+      "animalLootDropRate": 0.1,
+      "dv-rampTime": 16,
+      "dv-rampTargetPercent": 70,
+      "dv-adaptationTime": 35,
+      "dv-maxBrightness": 0.30,
+      "dv-maxDesaturation": 0.20,
+      "dv-desaturationThreshold": 0.85
     }
   },
   {
     "code": "rf-orc-negative",
     "type": "negative",
-    "attributes": {}
+    "attributes": {
+      "dv-adaptationLossTime": 15,
+      "dv-exposureLag": 15,
+      "dv-exposureMultiplier": 1.4,
+      "rangedWeaponsAcc": -0.25,
+      "dietsetup:breadMult": -0.5,
+      "dietsetup:preservedMult": -0.5
+    }
   },
   {
     "code": "rf-goblin-positive",
     "type": "positive",
     "attributes": {
       "wildCropDropRate": 0.6,
-      "forageDropRate": 1.35
+      "forageDropRate": 1.35,
+      "walkspeed": 0.10,
+      "vesselContentsDropRate": 0.20,
+      "wholeVesselLootChance": 0.12,
+      "rustyGearDropRate": 0.15,
+      "animalHarvestingTime": -0.25,
+      "animalLootDropRate": 0.20,
+      "sneakSpeed": 0.20,
+      "darknessWalkSpeed": 0.30,
+      "poisonDamageFactor": -0.50,
+      "animalSeekingRange": -0.85,
+      "dv-rampTime": 3,
+      "dv-rampTargetPercent": 90,
+      "dv-adaptationTime": 20,
+      "dv-maxBrightness": 0.35
     }
   },
   {
     "code": "rf-goblin-negative",
     "type": "negative",
-    "attributes": {}
+    "attributes": {
+      "maxhealthExtraPoints": -3.0,
+      "armorWalkSpeedAffectedness": 0.25,
+      "forageDropRate": -0.10,
+      "wildCropDropRate": -0.20,
+      "bowDrawingStrength": -0.20,
+      "meleeWeaponsDamage": -0.15,
+      "dayWalkSpeed": -0.10,
+      "maxSaturationFactor": -0.30,
+      "saturationLossFactor": 0.15,
+      "warmthBonus": -3,
+      "dv-adaptationLossTime": 2,
+      "dv-maxDesaturation": 0.40,
+      "dv-exposureLag": 25,
+      "dv-exposureMultiplier": 1.5,
+      "dv-desaturationThreshold": 0.65
+    }
   }
 ]

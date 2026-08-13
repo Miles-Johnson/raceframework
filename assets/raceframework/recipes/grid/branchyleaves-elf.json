@@ -1,11 +1,11 @@
 {
-	ingredientPattern: "LSL/L_L/LSL",
+	ingredientPattern: "LSL,L_L,LSL",
 	requiresTrait: "rf-elf-positive",
 	ingredients: {
-		"L": { type: "block", code: "leaves-placed-*", name: "wood" },
-		"S": { type: "item", code: "stick" }
+		"L": { type: "block", code: "game:leaves-placed-*", name: "wood" },
+		"S": { type: "item", code: "game:stick" }
 	},
 	width: 3,
 	height: 3,
-	output: { type: "block", code: "leavesbranchy-placed-{wood}" }
+	output: { type: "block", code: "game:leavesbranchy-placed-{wood}" }
 }

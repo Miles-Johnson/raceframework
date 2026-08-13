@@ -4,5 +4,23 @@
     "op": "replace",
     "path": "/ork/AvailableClasses",
     "value": [ "commoner", "hunter", "malefactor", "clockmaker", "blackguard", "tailor" ]
+  },
+  {
+    "file": "racialequality:config/customplayermodels/ork-char.json",
+    "op": "addmerge",
+    "path": "/ork/ExtraTraits",
+    "value": [ "rf-orc-positive", "rf-orc-negative" ]
+  },
+  {
+    "file": "racialequality:config/customplayermodels/ork-char.json",
+    "op": "add",
+    "path": "/ork/MinCollisionBox",
+    "value": [ 0.599, 1.716 ]
+  },
+  {
+    "file": "racialequality:config/customplayermodels/ork-char.json",
+    "op": "add",
+    "path": "/ork/MaxCollisionBox",
+    "value": [ 0.940, 2.694 ]
   }
 ]
