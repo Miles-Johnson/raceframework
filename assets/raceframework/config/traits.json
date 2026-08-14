@@ -59,8 +59,8 @@
       "bowDrawingStrength": 0.25,
       "rangedWeaponsAcc": 0.35,
       "animalSeekingRange": -0.6,
-      "animalHarvestingTime": -0.15,
-      "animalLootDropRate": 0.15,
+      "animalHarvestingTime": 0.4,
+      "animalLootDropRate": 0.25,
       "rfFallDamageReduction": 0.6,
       "rfTreeClimbing": 1,
       "rfBranchyLeavesPassthrough": 1
