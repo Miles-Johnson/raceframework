@@ -6,7 +6,7 @@
   "description": "General purpose race framework for Vintage Story.",
   "version": "0.0.1",
   "dependencies": {
-    "game": "1.21.5",
+    "game": "1.22.0",
     "playermodellib": "1.10.0",
     "racialequality": "0.1.27"
   }
