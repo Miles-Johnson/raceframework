@@ -7,6 +7,7 @@
       "bluntDamageFactor": -0.2,
       "armorWalkSpeedAffectedness": -0.85,
       "warmthBonus": 4,
+      "frostDamageFactor": -0.5,
       "slowtox:overintoxicationDamageMult": 0.5,
       "slowtox:tolerance": 3.0,
       "dv-maxBrightness": 0.20,
@@ -28,6 +29,7 @@
       "bowDrawingStrength": -0.3,
       "healingeffectivness": -0.2,
       "gravityDamageFactor": 0.10,
+      "heatDamageFactor": 0.6,
       "dv-rampTime": 100,
       "dv-rampTargetPercent": 50,
       "dv-adaptationTime": 150
@@ -55,7 +57,6 @@
       "forageDropRate": 0.6,
       "wildCropDropRate": 0.3,
       "walkspeed": 0.08,
-      "hungerrate": -0.4,
       "bowDrawingStrength": 0.25,
       "rangedWeaponsAcc": 0.35,
       "animalSeekingRange": -0.6,
@@ -73,7 +74,9 @@
       "miningSpeedMul": -0.35,
       "oreDropRate": -0.2,
       "armorWalkSpeedAffectedness": 0.8,
-      "dietsetup:preservedMult": -0.6
+      "dietsetup:preservedMult": -0.6,
+      "maxSaturationFactor": -0.5,
+      "warmthBonus": -4
     }
   },
   {
@@ -114,7 +117,7 @@
       "rustyGearDropRate": 0.15,
       "animalHarvestingTime": -0.25,
       "animalLootDropRate": 0.20,
-      "sneakSpeed": 0.20,
+      "sneakSpeed": 0.40,
       "darknessWalkSpeed": 0.30,
       "poisonDamageFactor": -0.50,
       "animalSeekingRange": -0.85,
