@@ -101,7 +101,7 @@
       "dv-exposureLag": 15,
       "dv-exposureMultiplier": 1.4,
       "rangedWeaponsAcc": -0.25,
-      "dietsetup:breadMult": -0.5,
+      "dietsetup:grainMult": -0.5,
       "dietsetup:preservedMult": -0.5
     }
   },
