@@ -74,7 +74,6 @@
       "miningSpeedMul": -0.35,
       "oreDropRate": -0.2,
       "armorWalkSpeedAffectedness": 0.8,
-      "dietsetup:preservedMult": -0.6,
       "maxSaturationFactor": -0.5,
       "warmthBonus": -4
     }
@@ -100,9 +99,7 @@
       "dv-adaptationLossTime": 15,
       "dv-exposureLag": 15,
       "dv-exposureMultiplier": 1.4,
-      "rangedWeaponsAcc": -0.25,
-      "dietsetup:grainMult": -0.5,
-      "dietsetup:preservedMult": -0.5
+      "rangedWeaponsAcc": -0.25
     }
   },
   {

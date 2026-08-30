@@ -81,7 +81,6 @@
   "game:charattribute-miningSpeedMul--0.35": "-35% mining speed",
   "game:charattribute-oreDropRate--0.2": "-20% ore yield",
   "game:charattribute-armorWalkSpeedAffectedness-0.8": "+80% armor slowdown",
-  "game:charattribute-dietsetup:preservedMult--0.6": "-60% satiety from preserved food",
   "game:charattribute-maxSaturationFactor--0.5": "-50% stomach size",
   "game:charattribute-maxSaturationFactor--0.50": "-50% stomach size",
   "game:charattribute-warmthBonus--4": "-4°C warmth",
