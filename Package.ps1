@@ -1,0 +1,100 @@
+# Content-only mod: no DLL/PDB, no Debug/Release split. Every run stages assets, mirrors to the
+# client Mods folder, zips, and copies to the server staging path -- all in one pass, all from
+# the same staged output, so the client folder and the server zip can never diverge (Phase A D1/D6).
+[CmdletBinding()]
+param(
+    [string]$DeployPath = $(if ($env:RaceFrameworkDeployPath) { $env:RaceFrameworkDeployPath } elseif ($env:VINTAGE_STORY_DATA) { Join-Path $env:VINTAGE_STORY_DATA "Mods\raceframework" } else { "" }),
+    [string]$StagingPath = $env:MOD_STAGING_PATH
+)
+
+$ErrorActionPreference = "Stop"
+
+$repoRoot = (Split-Path -Parent $MyInvocation.MyCommand.Path).TrimEnd('\')
+$modInfoPath = Join-Path $repoRoot "modinfo.json"
+$modInfo = Get-Content $modInfoPath -Raw | ConvertFrom-Json
+$modId = $modInfo.modid
+$version = $modInfo.version
+
+$excludeGlobs = @()
+
+if ($null -ne $DeployPath) { $DeployPath = $DeployPath.TrimEnd('\') }
+if ($null -ne $StagingPath) { $StagingPath = $StagingPath.TrimEnd('\') }
+
+$stageDir = Join-Path $repoRoot "obj\package\stage"
+if (Test-Path $stageDir) {
+    Remove-Item $stageDir -Recurse -Force
+}
+New-Item -ItemType Directory -Path $stageDir -Force | Out-Null
+
+Copy-Item $modInfoPath (Join-Path $stageDir "modinfo.json") -Force
+
+$assetsSrc = Join-Path $repoRoot "assets"
+$stagedCount = 0
+$excludedCount = 0
+if (Test-Path $assetsSrc) {
+    $assetFiles = Get-ChildItem -Path $assetsSrc -Recurse -File
+    foreach ($file in $assetFiles) {
+        $relPath = $file.FullName.Substring($repoRoot.Length + 1)
+        $excluded = $false
+        foreach ($glob in $excludeGlobs) {
+            if ($relPath -like $glob) { $excluded = $true; break }
+        }
+        if ($excluded) {
+            $excludedCount++
+            Write-Host "[$modId] Excluded from package: $relPath"
+            continue
+        }
+        $destPath = Join-Path $stageDir $relPath
+        $destDir = Split-Path -Parent $destPath
+        if (-not (Test-Path $destDir)) { New-Item -ItemType Directory -Path $destDir -Force | Out-Null }
+        Copy-Item $file.FullName $destPath -Force
+        $stagedCount++
+    }
+}
+Write-Host "[$modId] Staged $stagedCount asset file(s), excluded $excludedCount"
+
+if ($DeployPath -ne "") {
+    if (-not (Test-Path $DeployPath)) { New-Item -ItemType Directory -Path $DeployPath -Force | Out-Null }
+
+    $stagedFiles = Get-ChildItem -Path $stageDir -Recurse -File
+    $stagedRelPaths = @{}
+    foreach ($file in $stagedFiles) {
+        $relPath = $file.FullName.Substring($stageDir.Length + 1)
+        $stagedRelPaths[$relPath] = $true
+        $destPath = Join-Path $DeployPath $relPath
+        $destDir = Split-Path -Parent $destPath
+        if (-not (Test-Path $destDir)) { New-Item -ItemType Directory -Path $destDir -Force | Out-Null }
+        Copy-Item $file.FullName $destPath -Force
+    }
+
+    $deployedFiles = Get-ChildItem -Path $DeployPath -Recurse -File
+    $staleCount = 0
+    foreach ($file in $deployedFiles) {
+        $relPath = $file.FullName.Substring($DeployPath.Length + 1)
+        if (-not $stagedRelPaths.ContainsKey($relPath)) {
+            Remove-Item $file.FullName -Force
+            $staleCount++
+        }
+    }
+    Write-Host "[$modId] Deployed to $DeployPath : $($stagedFiles.Count) copied, $staleCount stale removed"
+} else {
+    Write-Host "[$modId] DeployPath not set, skipping client mirror"
+}
+
+$artifactsDir = Join-Path $repoRoot "artifacts"
+if (-not (Test-Path $artifactsDir)) { New-Item -ItemType Directory -Path $artifactsDir -Force | Out-Null }
+
+$zipPath = Join-Path $artifactsDir "${modId}_${version}.zip"
+if (Test-Path $zipPath) { Remove-Item $zipPath -Force }
+Compress-Archive -Path (Join-Path $stageDir "*") -DestinationPath $zipPath -Force
+Write-Host "[$modId] Packaged $zipPath"
+
+if ($StagingPath -ne "") {
+    if (-not (Test-Path $StagingPath)) { New-Item -ItemType Directory -Path $StagingPath -Force | Out-Null }
+    Copy-Item $zipPath (Join-Path $StagingPath (Split-Path -Leaf $zipPath)) -Force
+    Write-Host "[$modId] Copied zip to staging path $StagingPath"
+} else {
+    Write-Host "[$modId] MOD_STAGING_PATH not set, skipping server-staging copy"
+}
+
+exit 0
