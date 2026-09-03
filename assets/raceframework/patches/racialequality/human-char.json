@@ -4,5 +4,11 @@
     "op": "replace",
     "path": "/human/AvailableClasses",
     "value": [ "commoner", "hunter", "malefactor", "clockmaker", "blackguard", "tailor" ]
+  },
+  {
+    "file": "racialequality:config/customplayermodels/human-char.json",
+    "op": "addmerge",
+    "path": "/human/ExtraTraits",
+    "value": [ "rf-human-positive" ]
   }
 ]

@@ -144,5 +144,10 @@
       "dv-exposureMultiplier": 1.5,
       "dv-desaturationThreshold": 0.65
     }
+  },
+  {
+    "code": "rf-human-positive",
+    "type": "positive",
+    "attributes": {}
   }
 ]
