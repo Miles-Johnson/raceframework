@@ -15,7 +15,8 @@
       "dv-maxDesaturation": 0.55,
       "dv-exposureLag": 1,
       "dv-exposureMultiplier": 0.1,
-      "dv-desaturationThreshold": 0.5
+      "dv-desaturationThreshold": 0.5,
+      "maxSaturationFactor": 0.3
     }
   },
   {
@@ -74,7 +75,7 @@
       "miningSpeedMul": -0.35,
       "oreDropRate": -0.2,
       "armorWalkSpeedAffectedness": 0.8,
-      "maxSaturationFactor": -0.5,
+      "maxSaturationFactor": -0.3,
       "warmthBonus": -4
     }
   },
@@ -89,7 +90,8 @@
       "dv-adaptationTime": 35,
       "dv-maxBrightness": 0.30,
       "dv-maxDesaturation": 0.20,
-      "dv-desaturationThreshold": 0.85
+      "dv-desaturationThreshold": 0.85,
+      "maxSaturationFactor": 1.5
     }
   },
   {
