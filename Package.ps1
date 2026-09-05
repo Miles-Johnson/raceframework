@@ -34,7 +34,10 @@ function Get-NormalizedBytes {
 function Get-StagedContentHash {
     param([string]$StageRoot)
     $sha256 = [System.Security.Cryptography.SHA256]::Create()
-    $lines = Get-ChildItem -Path $StageRoot -Recurse -File | Where-Object { $_.Extension -notin '.dll', '.pdb' } | ForEach-Object {
+    # build-stamp.json's timestamp changes every run regardless of real content changes, so it's
+    # excluded here the same way .dll/.pdb are -- otherwise this guard would report "changed" on
+    # every single build and the warning would stop meaning anything.
+    $lines = Get-ChildItem -Path $StageRoot -Recurse -File | Where-Object { $_.Extension -notin '.dll', '.pdb' -and $_.Name -ne 'build-stamp.json' } | ForEach-Object {
         $rel = $_.FullName.Substring($StageRoot.Length).TrimStart('\','/').Replace('\','/')
         $bytes = Get-NormalizedBytes -Bytes ([System.IO.File]::ReadAllBytes($_.FullName)) -Extension $_.Extension
         $hash = [System.BitConverter]::ToString($sha256.ComputeHash($bytes)).Replace('-', '')
@@ -49,7 +52,7 @@ function Get-ZipContentHash {
     $sha256 = [System.Security.Cryptography.SHA256]::Create()
     $zip = [System.IO.Compression.ZipFile]::OpenRead($ZipPath)
     try {
-        $lines = $zip.Entries | Where-Object { $_.FullName -notmatch '\.(dll|pdb)$' } | ForEach-Object {
+        $lines = $zip.Entries | Where-Object { $_.FullName -notmatch '\.(dll|pdb)$' -and $_.FullName -ne 'build-stamp.json' } | ForEach-Object {
             $stream = $_.Open()
             $ms = New-Object System.IO.MemoryStream
             $stream.CopyTo($ms)
@@ -85,6 +88,25 @@ if (Test-Path $stageDir) {
 New-Item -ItemType Directory -Path $stageDir -Force | Out-Null
 
 Copy-Item $modInfoPath (Join-Path $stageDir "modinfo.json") -Force
+
+# Content-only mod, so this is the only way to tell a fresh upload from a stale one on the
+# server without a version bump. Sits at the zip root next to modinfo.json, not under assets/ --
+# the loader only reads modinfo.json/worldconfig.json/modicon.png by name and only walks
+# assets/ for content, so an extra root-level file is never seen (reference/decompiled/1.21.5/
+# VintagestoryLib/Vintagestory.Common/ModContainer.cs:296, FolderOrigin.cs:21-23). Staged
+# alongside modinfo.json so it also lands in the client mirror below, readable without unzipping.
+$gitSha = (git -C $repoRoot rev-parse HEAD)
+$gitShortSha = (git -C $repoRoot rev-parse --short HEAD)
+$gitDirty = [bool](git -C $repoRoot status --porcelain)
+$buildStamp = [ordered]@{
+    modid     = $modId
+    version   = $version
+    sha       = $gitSha
+    shortSha  = $gitShortSha
+    dirty     = $gitDirty
+    timestamp = (Get-Date).ToUniversalTime().ToString("o")
+}
+($buildStamp | ConvertTo-Json) | Set-Content -Path (Join-Path $stageDir "build-stamp.json") -Encoding utf8
 
 $assetsSrc = Join-Path $repoRoot "assets"
 $stagedCount = 0
