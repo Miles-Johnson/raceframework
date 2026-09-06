@@ -2,9 +2,11 @@
   "type": "content",
   "modid": "raceframework",
   "name": "Race Framework",
-  "authors": [ "Kjol" ],
-  "description": "General purpose race framework for Vintage Story.",
-  "version": "0.0.2-test.2",
+  "authors": [
+    "Kjol"
+  ],
+  "description": "Race traits and class choices for humans, dwarves, elves, orcs and goblins, using Racial Equality and Player Model Library.",
+  "version": "0.0.2-rc.1",
   "dependencies": {
     "game": "1.22.0",
     "playermodellib": "1.23.8",
