@@ -1,6 +1,6 @@
 # Race Framework
 
-Prerelease candidate for Vintage Story 1.22.6. In-game acceptance is still pending.
+Initial baseline **1.0.0** for Vintage Story **1.22.6**. Live gameplay acceptance is still pending; expect bugs and balance changes.
 
 **Summary:** Racial strengths, drawbacks and class choices for humans, dwarves, elves, orcs and goblins.
 
@@ -49,7 +49,7 @@ Original work is MIT-licensed. You are welcome to fork it, tweak the balance and
 
 Thanks to **Tomoyuki** for Racial Equality and **Caliber** for work on Player Model Library. These projects supply the models and model system used here.
 
-[Source code](https://github.com/Miles-Johnson/raceframework) · [Report a problem](https://github.com/Miles-Johnson/raceframework/issues)
+[Source code](https://github.com/Question-AK/raceframework) · [Report a problem](https://github.com/Question-AK/raceframework/issues)
 
 
 ## Build and contribute

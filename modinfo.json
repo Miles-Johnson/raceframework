@@ -3,13 +3,15 @@
   "modid": "raceframework",
   "name": "Race Framework",
   "authors": [
-    "Kjol"
+    "Question"
   ],
   "description": "Race traits and class choices for humans, dwarves, elves, orcs and goblins, using Racial Equality and Player Model Library.",
-  "version": "0.0.2-rc.1",
+  "version": "1.0.0",
   "dependencies": {
-    "game": "1.22.0",
+    "game": "1.22.6",
     "playermodellib": "1.23.8",
     "racialequality": "0.1.28"
-  }
+  },
+  "requiredOnClient": true,
+  "requiredOnServer": true
 }
